@@ -1,0 +1,26 @@
+<div class="col-lg-6">
+    <h4>Contacte con nostoros</h4>
+    <form name="contact" action="functions/contactSave.php" method="post">
+        <div class="form-group">
+            <label for="firstname">Nombre</label>
+            <input type="text" class="form-control" name="firstname" placeholder="Ingrese su nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Apellido</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Ingrese su apellido">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Ingrese su email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea class="form-control" name="message" cols="30" rows="10" required>
+
+            </textarea>
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+</div>
+
+
