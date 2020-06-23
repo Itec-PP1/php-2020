@@ -1,10 +1,10 @@
 <?php
 
 $mysqli = new mysqli(
-    '172.27.0.2',
+    'mysql',
     'root',
     'password',
-    'blog_php_2020'
+    'db'
 );
 
 if ($mysqli->connect_errno) {

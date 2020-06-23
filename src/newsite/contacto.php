@@ -12,14 +12,14 @@
     <title>Productos</title>
 </head>
 <body>
-<?php include 'views/menu.php'?>
+<?php include 'views/menu.php' ?>
 <div class="container">
     <section>
         <div class="row">
             <div class="col-md-12 blog-main">
                 <div class="blog-post">
-                    <h2 class="blog-post-title">Servicios</h2>
-                    <p><?php include 'views/servicios.txt'?></p>
+                    <h2 class="blog-post-title">Contacto</h2>
+                    <p><?php include 'views/contacto.html' ?></p>
                 </div>
             </div>
         </div>

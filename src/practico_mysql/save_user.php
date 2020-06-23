@@ -1,24 +1,23 @@
 <?php
 
 $mysqli = new mysqli(
-    '172.27.0.2',
+    'mysql',
     'root',
     'password',
-    'blog_php_2020'
+    'db'
 );
 
 if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-$userId = $_POST['id'];
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $avatar = $_POST['avatar'];
 
-$sql = "UPDATE users SET username='$username', email = '$email', password = '$password', avatar = '$avatar'  WHERE id=$userId";
+$query = "INSERT INTO users (username, email, password, avatar) VALUES ('$username', '$email', '$password' , '$avatar');";
 
-mysqli_query($mysqli, $sql);
+$mysqli->query($query);
 
 header('Location: users.php');

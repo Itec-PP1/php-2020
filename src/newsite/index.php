@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- Menu -->
-<?php include 'views/menu.php'?>
+<?php include 'views/menu.php' ?>
 
 <div class="container">
     <!-- Contenido -->
