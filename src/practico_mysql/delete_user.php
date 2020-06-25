@@ -1,21 +1,14 @@
 <?php
 
-$mysqli = new mysqli(
-    'mysql',
-    'root',
-    'password',
-    'db'
-);
-
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+require_once ('functions/dbFunctions.php');
+$connection = getDataBaseConnection();
 
 $userId = $_GET['id'];
 
 // sql to delete a record
 $sql = "DELETE FROM users WHERE id= $userId";
+$result = $connection->query($sql);
 
-$result = $mysqli->query($sql);
+$connection->close();
 
 header('Location: users.php');

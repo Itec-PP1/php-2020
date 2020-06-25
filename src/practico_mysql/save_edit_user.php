@@ -1,15 +1,7 @@
 <?php
 
-$mysqli = new mysqli(
-    'mysql',
-    'root',
-    'password',
-    'db'
-);
-
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+require_once ('functions/dbFunctions.php');
+$connection = getDataBaseConnection();
 
 $userId = $_POST['id'];
 $username = $_POST['username'];
@@ -19,6 +11,7 @@ $avatar = $_POST['avatar'];
 
 $sql = "UPDATE users SET username='$username', email = '$email', password = '$password', avatar = '$avatar'  WHERE id=$userId";
 
-mysqli_query($mysqli, $sql);
+mysqli_query($connection, $sql);
+$connection->close();
 
 header('Location: users.php');
