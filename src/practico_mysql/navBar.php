@@ -19,16 +19,14 @@ $conexion= Conection();
 </head>
 <body>
 <!-- NavBar -->
-<?php
-    while($fila = mysqli_fetch_array($result)) {
-        echo '<li><a href="#" >'.$fila['name'].'</a></li>';
-    }
-        
-                
-    
-    
-?>
-
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <?php
+        while($fila = mysqli_fetch_array($result)) {
+            echo '<li class="nav-item active"><a class="nav-link" href="#" >'.$fila['name'].'</a></li>';
+        }        
+    ?>
+  </ul>
 
 
     
