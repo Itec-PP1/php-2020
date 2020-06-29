@@ -1,15 +1,8 @@
 <?php
 
-$mysqli = new mysqli(
-    'mysql',
-    'root',
-    'password',
-    'db'
-);
+include_once "conection.php";
 
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+$conexion= Conection();
 
 $username = $_POST['username'];
 $email = $_POST['email'];
@@ -18,6 +11,6 @@ $avatar = $_POST['avatar'];
 
 $query = "INSERT INTO users (username, email, password, avatar) VALUES ('$username', '$email', '$password' , '$avatar');";
 
-$mysqli->query($query);
+$conexion->query($query);
 
 header('Location: users.php');

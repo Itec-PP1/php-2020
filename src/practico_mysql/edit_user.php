@@ -1,19 +1,12 @@
 <?php
 
-$mysqli = new mysqli(
-    'mysql',
-    'root',
-    'password',
-    'db'
-);
+include_once "conection.php";
 
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+$conexion= Conection();
 
 $userId = $_GET['id'];
 
-$result = $mysqli->query("SELECT * FROM users WHERE id = $userId;");
+$result = $conexion->query("SELECT * FROM users WHERE id = $userId;");
 
 $user = $result->fetch_assoc();
 ?>

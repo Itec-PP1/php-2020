@@ -1,17 +1,10 @@
 <?php
 
-$mysqli = new mysqli(
-    'mysql',
-    'root',
-    'password',
-    'db'
-);
+include_once "conection.php";
 
-if ($mysqli->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-}
+$conexion= Conection();
 
-$result = $mysqli->query('select * from users where 1;');
+$result = $conexion->query('select * from users where 1;');
 ?>
 
 <h1> Users </h1>
